@@ -85,4 +85,4 @@ bundle exec rake
 
 In this fork there is no rounding of the rates in order to support better precision for downstream applications.
 
-Frankfurter was known as Fixer between 2012 and 2018. After selling the original domain, I relaunched under this name.
+This fork uses sqlite instead of PostgreSQL.
