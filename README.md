@@ -78,6 +78,9 @@ Now you should be able to see some stats in Grafana Cloud.
 ## Running tests
 
 ```bash 
+# must have .env file present
+cp .env.example .env # only run this one time
+
 bundle exec rake
 ```
 
