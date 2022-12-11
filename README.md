@@ -55,6 +55,18 @@ docker run -d -p 3000:3000 \
 
 Check out http://localhost:3000/latest
 
+### Push to Docker Hub
+
+In order to make deployment super-simple, we can push a version to [Docker Hub](https://hub.docker.com/repository/docker/palbrattberg/frankfurter), I simply push to `palbrattberg/frankfurter`.
+
+To push your own, first create a new repository on Docker Hub, then build and push your image:
+
+```bash
+docker login
+docker build -t palbrattberg/frankfurter:latest .
+docker push palbrattberg/frankfurter:latest
+```
+
 ## Load testing
 We use [k6](https://k6.io) for load testing the API. 
 
