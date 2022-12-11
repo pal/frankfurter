@@ -63,8 +63,8 @@ To push your own, first create a new repository on Docker Hub, then build and pu
 
 ```bash
 docker login
-docker build -t palbrattberg/frankfurter:latest .
-docker push palbrattberg/frankfurter:latest
+docker buildx create --use desktop-linux
+docker buildx build --push --platform linux/arm/v7,linux/arm64,linux/amd64 -t palbrattberg/frankfurter:latest .
 ```
 
 ## Load testing
