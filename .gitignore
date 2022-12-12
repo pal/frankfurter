@@ -8,3 +8,4 @@ telegraf.conf
 config/newrelic.yml
 .env.test
 *.db
+summary.html
