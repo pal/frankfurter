@@ -1,5 +1,6 @@
 import http from 'k6/http'
 import { sleep } from 'k6'
+import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export const options = {
   ext: {
@@ -10,11 +11,13 @@ export const options = {
     }
   },
   stages: [
-    { duration: '1m', target: 50 }, // ramp up to 50 in 1 minute
-    { duration: '5m', target: 50 } // stay at 50 for 5 minutes
+    { duration: '10s', target: 50 }, // ramp up to 50 in 1 minute
+    { duration: '30s', target: 150 }, // ramp up to 50 in 1 minute
+    { duration: '1m', target: 450 }, // ramp up to 50 in 1 minute
+    { duration: '1m', target: 10 } // stay at 50 for 5 minutes
 
-    // { duration: '5s', target: 100 } // canary
-    // { duration: '1m', target: 50 } // below normal load
+    // { duration: '5s', target: 100 }, // canary
+    // { duration: '1m', target: 50 }, // below normal load
     // { duration: '5m', target: 100 },
     // { duration: '2m', target: 200 }, // normal load
     // { duration: '5m', target: 200 },
@@ -57,4 +60,10 @@ export default function () {
   ])
 
   sleep(1)
+}
+
+export function handleSummary(data) {
+  return {
+    "summary.html": htmlReport(data),
+  };
 }
