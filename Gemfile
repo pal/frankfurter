@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby File.read(".ruby-version").chomp
 
 gem "irb"
+gem "logger"
 gem "money"
 gem "oj"
 gem "ox"
